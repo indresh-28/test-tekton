@@ -6,7 +6,6 @@ source:
   
 destination:
   server: https://kubernetes.default.svc
-  namespace: argo-cd
 
 syncPolicy:
   CreateNamespace: true
