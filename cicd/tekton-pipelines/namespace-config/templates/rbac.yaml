@@ -44,6 +44,6 @@ metadata:
   name: {{ $.Values.pipelineName }}
 rules:
 - apiGroups: ["triggers.tekton.dev"]
-  resources: ["clustertriggerbindings"]
+  resources: ["*"]
   verbs: ["get", "list", "watch" , "update" , "create"]
 
