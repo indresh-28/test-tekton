@@ -17,5 +17,5 @@ syncPolicy:
 tektonPipelines:
   - name: tekton-pipeline-dev-cluster  # This will rename with the pipeline name
     path: cicd/tekton-pipelines/cluster-config # the path for the yamls
-  #- name: tekton-pipeline-dev-cluster  # This will rename with the pipeline name
-  #  path: cicd/tekton-pipelines/tekton-yamls
+  - name: tekton-pipeline-namespace-cluster  # This will rename with the pipeline name
+    path: cicd/tekton-pipelines/namespace-config
