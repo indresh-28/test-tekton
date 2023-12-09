@@ -19,6 +19,7 @@ apiVersion: triggers.tekton.dev/v1beta1
 kind: TriggerTemplate
 metadata:
   name: {{ $.Values.pipelineName }}
+  namespace: {{ $.Values.namespace }}
 spec:
   params:
   - name: repo-url
@@ -44,6 +45,7 @@ spec:
       serviceAccountName: {{ $.Values.pipelineName }}
       pipelineRef:
         name: {{ $.Values.pipelineName }}
+        namespace: {{ $.Values.namespace }}
       podTemplate:
         securityContext:
           fsGroup: 65532
