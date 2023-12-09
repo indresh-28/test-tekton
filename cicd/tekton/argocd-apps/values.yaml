@@ -15,5 +15,7 @@ syncPolicy:
     selfHeal: true
 
 tektonPipelines:
-  - name: tekton-pipeline-dev-cluster
-    path: cicd/tekton-pipelines/tekton-yamls
+  - name: tekton-pipeline-dev-cluster  # This will rename with the pipeline name
+    path: cicd/tekton-pipelines/cluster-config # the path for the yamls
+  #- name: tekton-pipeline-dev-cluster  # This will rename with the pipeline name
+  #  path: cicd/tekton-pipelines/tekton-yamls
