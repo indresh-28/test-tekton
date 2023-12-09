@@ -1,4 +1,4 @@
 pipelineName: "test-tekton"
 ingressDomainName: "replace"
 tektonDashboard: "replace"
-nnamespace: "tekton-pipelines"
+nnamespace: "argo-cd"
