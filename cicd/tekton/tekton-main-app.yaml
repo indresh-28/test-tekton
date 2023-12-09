@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/intelops/capten-templates.git
-    targetRevision: HEAD
+    repoURL: https://github.com/indresh-28/test-tekton
+    targetRevision: tekton-infra
     path: cicd/tekton/argocd-apps
     helm:
       valueFiles:
