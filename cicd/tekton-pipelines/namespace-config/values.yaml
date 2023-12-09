@@ -1,4 +1,4 @@
-pipelineName: "replace"
+pipelineName: "test-tekton"
 ingressDomainName: "replace"
 tektonDashboard: "replace"
 nnamespace: "tekton-pipelines"
