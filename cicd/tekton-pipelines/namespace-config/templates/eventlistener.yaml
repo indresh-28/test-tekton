@@ -4,6 +4,7 @@ metadata:
   name: {{ $.Values.pipelineName }}
   namespace: {{ $.Values.namespace }}
 spec:
+  serviceAccountName: {{ $.Values.pipelineName }}
   triggers:
     - name: github-push-event
       interceptors:
