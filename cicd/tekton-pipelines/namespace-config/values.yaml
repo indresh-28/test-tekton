@@ -1,4 +1,4 @@
 pipelineName: "test-tekton"
-ingressDomainName: "replace"
+ingressDomainName: "test-tekton.azureagent.optimizor.app"
 tektonDashboard: "replace"
 namespace: "argo-cd"
