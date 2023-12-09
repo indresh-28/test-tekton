@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: {{ $.Values.pipelineName }}
-  namespace: 
+  namespace: {{ $.Values.namespace }}
 secrets:
 - name: gitcred
 - name: docker-credentials
@@ -18,22 +18,10 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: {{ $.Values.pipelineName }}
-  namespace: tekton-pipelines
+  namespace: {{ $.Values.namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ $.Values.pipelineName }}
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: {{ $.Values.pipelineName }}
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: {{ $.Values.pipelineName }}
-subjects:
-- kind: ServiceAccount
   name: {{ $.Values.pipelineName }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1

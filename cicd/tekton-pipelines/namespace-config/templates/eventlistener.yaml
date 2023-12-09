@@ -2,6 +2,7 @@ apiVersion: triggers.tekton.dev/v1beta1
 kind: EventListener
 metadata:
   name: {{ $.Values.pipelineName }}
+  namespace: {{ $.Values.namespace }}
 spec:
   triggers:
     - name: github-push-event
