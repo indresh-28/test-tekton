@@ -1,12 +1,11 @@
 project: default
 
 source:
-  repoURL: https://github.com/intelops/capten-templates.git
+  repoURL: https://github.com/indresh-28/test-tekton
   targetRevision: main
   
 destination:
   server: https://kubernetes.default.svc
-  namespace: tekton
 
 syncPolicy:
   CreateNamespace: true
@@ -14,6 +13,7 @@ syncPolicy:
     prune: false
     selfHeal: true
 
+tektonPath: cicd/tekton-pipelines
+
 tektonPipelines:
-  - name: tekton-pipeline-dev-cluster
-    path: cicd/tekton-pipelines/tekton-yamls
+  - name: github-pipeline-template

@@ -4,16 +4,19 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ .name }}
-  namespace: {{ $.Release.Namespace }}
+  namespace: argo-cd
 spec:
   project: {{ $.Values.project }}
   source:
     repoURL: {{ $.Values.source.repoURL }}
     targetRevision: {{ $.Values.source.targetRevision }}
-    path: {{ .path}}
+    path: {{ .name}}
+    helm:
+      valueFiles:
+      - values.yaml
   destination:
     server: {{ $.Values.destination.server }}
-    namespace: {{ $.Values.destination.namespace }}
+    namespace: argo-cd
   syncPolicy:
     automated:
       prune: {{ $.Values.syncPolicy.automated.prune }}
