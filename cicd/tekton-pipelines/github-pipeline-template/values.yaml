@@ -2,3 +2,7 @@ pipelineName: "test-tekton"
 ingressDomainName: "test-tekton.azureagent.optimizor.app"
 tektonDashboard: "replace"
 namespace: "argo-cd"
+secretName:
+- name: gitcred
+- name: docker-credentials
+- name: github-webhook-secret

@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: {{ $.Values.source.repoURL }}
     targetRevision: {{ $.Values.source.targetRevision }}
-    path: {{ .path}}
+    path: {{ .name}}
     helm:
       valueFiles:
       - values.yaml

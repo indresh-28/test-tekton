@@ -4,12 +4,11 @@ metadata:
   name: {{ $.Values.pipelineName }}
   namespace: {{ $.Values.namespace }}
 secrets:
-- name: gitcred
-- name: docker-credentials
-- name: github-webhook-secret
-- name: cosign-key
-- name: cosign-pub
-- name: cosign-docker-secret
+{{- with .Values.secretName }}
+{{- range . }}
+- name:  {{ .name}}
+{{- end }}
+{{- end }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -26,20 +25,7 @@ roleRef:
   name: {{ $.Values.pipelineName }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: {{ $.Values.pipelineName }}
-subjects:
-- kind: ServiceAccount
-  name: {{ $.Values.pipelineName }}
-  namespace: {{ $.Values.namespace }}
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: {{ $.Values.pipelineName }}
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
+kind: Role
 metadata:
   name: {{ $.Values.pipelineName }}
 rules:

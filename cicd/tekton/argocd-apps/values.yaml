@@ -2,7 +2,7 @@ project: default
 
 source:
   repoURL: https://github.com/indresh-28/test-tekton
-  targetRevision: tekton-infra
+  targetRevision: main
   
 destination:
   server: https://kubernetes.default.svc
@@ -13,8 +13,7 @@ syncPolicy:
     prune: false
     selfHeal: true
 
+tektonPath: cicd/tekton-pipelines
+
 tektonPipelines:
-  - name: tekton-pipeline-dev-cluster  # This will rename with the pipeline name
-    path: cicd/tekton-pipelines/cluster-config # the path for the yamls
-  - name: tekton-pipeline-namespace-cluster  # This will rename with the pipeline name
-    path: cicd/tekton-pipelines/namespace-config
+  - name: github-pipeline-template
