@@ -16,4 +16,4 @@ syncPolicy:
 tektonPath: cicd/tekton-pipelines
 
 tektonPipelines:
-  - name: github-pipeline-template
+  - name: pipeline-template
