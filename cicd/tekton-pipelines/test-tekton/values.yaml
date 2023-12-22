@@ -1,5 +1,5 @@
 ingressDomainName: test
-namespace: argo-cd
+namespace: tekton-pipelines
 pipelineName: test-tekton
 secretName:
 - name: gitcred-test-tekton
