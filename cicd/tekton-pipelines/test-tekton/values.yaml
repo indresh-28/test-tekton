@@ -1,4 +1,4 @@
-ingressDomainName: test
+ingressDomainName: tekton.azureagent.optimizor.app
 namespace: tekton-pipelines
 pipelineName: test-tekton
 secretName:
