@@ -11,7 +11,7 @@ secrets:
 {{- end }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+kind: ClusterRole
 metadata:
   name: {{ $.Values.pipelineName }}
 rules:
@@ -20,7 +20,7 @@ rules:
   verbs: ["get", "list", "watch" , "update" , "create"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
   name: {{ $.Values.pipelineName }}
   namespace: {{ $.Values.namespace }}
