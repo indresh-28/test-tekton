@@ -30,6 +30,5 @@ subjects:
   namespace: {{ $.Values.namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: Role
+  kind: ClusterRole
   name: {{ $.Values.pipelineName }}
-
