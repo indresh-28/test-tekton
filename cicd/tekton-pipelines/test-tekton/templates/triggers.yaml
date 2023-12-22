@@ -45,7 +45,6 @@ spec:
       serviceAccountName: {{ $.Values.pipelineName }}
       pipelineRef:
         name: {{ $.Values.pipelineName }}
-        namespace: {{ $.Values.namespace }}
       podTemplate:
         securityContext:
           fsGroup: 65532
@@ -65,19 +64,10 @@ spec:
                 storage: 30Gi   
       - name: git-credentials
         secret:
-          secretName: gitcred
+          secretName: "gitcred-{{ $.Values.pipelineName }}"
       - name: docker-credentials
         secret:
-          secretName: docker-credentials   #give the credential of the registry like ghcr,docker
-      - name: dockerconfig
-        secret:
-          secretName: cosign-docker-secret # If you need to provide dockerconfig
-      - name: cosign
-        secret:
-          secretName: cosign-key
-      - name: cosign-pub
-        secret:
-          secretName: cosign-pub     
+          secretName: "docker-credentials-{{ $.Values.pipelineName }}"
       params:
       - name: repo-url
         value: $(tt.params.repo-url)
