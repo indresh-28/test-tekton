@@ -88,6 +88,6 @@ spec:
           value:  ghcr.io/$(body.repository.full_name)  
         - name: REPONAME
           value: $(body.repository.full_name)
-        - ref: trigger-binding
+        - ref: {{ $.Values.pipelineName }}
       template:
         ref: {{ $.Values.pipelineName }}
