@@ -5,5 +5,4 @@ source:
   repoURL: https://github.com/indresh-28/test-tekton.git
   targetRevision: main
 tektonPath: cicd/tekton-pipelines
-tektonPipelines:
-- name: demo
+tektonPipelines: []
