@@ -1,0 +1,8 @@
+ingressDomainName: tekton.azureagent.optimizor.app
+namespace: tekton-pipelines
+pipelineName: pipeline-config
+secretName:
+- name: gitcred-pipeline-config
+- name: docker-credentials-pipeline-config
+- name: github-webhook-secret-pipeline-config
+tektonDashboard: http://tekton.azureagent.optimizor.app/pipeline-config

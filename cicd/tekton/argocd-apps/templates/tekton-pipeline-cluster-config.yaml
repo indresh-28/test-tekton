@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tekton-cluster-tasks
+  namespace: argo-cd
+spec:
+  project: default
+  source:
+    repoURL: {{ $.Values.source.repoURL }}
+    targetRevision: main
+    path: cicd/tekton-pipelines/cluster-config
+    helm:
+      valueFiles:
+      - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo-cd
