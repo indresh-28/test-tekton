@@ -1,8 +1,0 @@
-ingressDomainName: tekton.azureagent.optimizor.app
-namespace: tekton-pipelines
-pipelineName: indresh-new
-secretName:
-- name: gitcred-indresh-new
-- name: docker-credentials-indresh-new
-- name: github-webhook-secret-indresh-new
-tektonDashboard: indresh-new
