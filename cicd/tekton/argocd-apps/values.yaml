@@ -1,0 +1,9 @@
+destination:
+  server: https://kubernetes.default.svc
+project: default
+source:
+  repoURL: https://github.com/indresh-28/test-tekton.git
+  targetRevision: main
+tektonPath: cicd/tekton-pipelines
+tektonPipelines:
+- name: demo-test-pipeline
