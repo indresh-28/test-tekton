@@ -1,4 +1,43 @@
-clusters: []
+clusters:
+- defaultApps:
+  - chart: falco
+    name: falco
+    namespace: falco
+    repoURL: https://kube-tarian.github.io/helmrepo-supporting-tools
+    targetRevision: 0.0.1
+    valuesPath: infra/clusters/app-configs/dev-eks/falco-values.yaml
+  - chart: kyverno
+    name: kyverno
+    namespace: kyverno
+    repoURL: https://kube-tarian.github.io/helmrepo-supporting-tools
+    targetRevision: 1.0.2
+    valuesPath: infra/clusters/app-configs/dev-eks/kyverno-values.yaml
+  - chart: kube-prometheus-stack
+    name: prometheus
+    namespace: observability
+    repoURL: https://kube-tarian.github.io/helmrepo-supporting-tools
+    targetRevision: 1.0.7
+    valuesPath: infra/clusters/app-configs/dev-eks/prometheus-values.yaml
+  - chart: promtail
+    name: promtail
+    namespace: observability
+    repoURL: https://kube-tarian.github.io/helmrepo-supporting-tools
+    targetRevision: 1.0.0
+    valuesPath: infra/clusters/app-configs/dev-eks/promtail-values.yaml
+  - chart: agent
+    name: kubviz-agent
+    namespace: observability
+    repoURL: https://intelops.github.io/kubviz/
+    targetRevision: 1.1.10
+    valuesPath: infra/clusters/app-configs/dev-eks/kubviz-agent-values.yaml
+  - chart: external-secrets
+    name: external-secrets
+    namespace: external-secrets
+    repoURL: https://kube-tarian.github.io/helmrepo-supporting-tools
+    targetRevision: 1.0.0
+    valuesPath: infra/clusters/app-configs/dev-eks/external-secrets-values.yaml
+  name: dev-eks
+  server: https://3CF5C32781128426001F1978EBD0052D.gr7.us-east-1.eks.amazonaws.com
 compositions:
 - name: aws-compositions
   path: infra/clusters/compositions/aws

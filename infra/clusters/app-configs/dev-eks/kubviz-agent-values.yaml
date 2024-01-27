@@ -1,0 +1,7 @@
+clusterName: dev-eks
+nats:
+  host: 20.204.97.156
+  auth:
+    secret:
+      name: "nats-secret"
+      key: "nats-token"
