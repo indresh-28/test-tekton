@@ -6,7 +6,6 @@ source:
   targetRevision: main
 tektonPath: cicd/tekton-pipelines
 tektonPipelines:
-- name: plugin-pipeline
 - name: test-ss-pipeline
 - name: test-second-pipeline
 - name: capten-second-pipeline

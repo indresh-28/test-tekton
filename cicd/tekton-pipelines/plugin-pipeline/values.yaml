@@ -1,9 +1,0 @@
-ingressDomainName: azureagent.optimizor.app
-namespace: tekton-pipelines
-pipelineName: plugin-pipeline
-secretName:
-- name: gitcred-plugin-pipeline
-- name: docker-credentials-plugin-pipeline
-- name: github-webhook-secret-plugin-pipeline
-- name: argocd-plugin-pipeline
-- name: extraconfig-plugin-pipeline
