@@ -6,5 +6,6 @@ source:
   targetRevision: main
 tektonPath: cicd/tekton-pipelines
 tektonPipelines:
+- name: test-pipeline
 - name: first-capten-pipeline
 - name: demo-capten-pipeline
