@@ -6,6 +6,7 @@ source:
   targetRevision: main
 tektonPath: cicd/tekton-pipelines
 tektonPipelines:
+- name: ttt-pipeline
 - name: final-pipeline
 - name: myfirst-pipeline
 - name: test-ss-pipeline
