@@ -7,7 +7,6 @@ source:
 tektonPath: cicd/tekton-pipelines
 tektonPipelines:
 - name: ttt-pipeline
-- name: final-pipeline
 - name: test-ss-pipeline
 - name: test-second-pipeline
 - name: capten-second-pipeline
