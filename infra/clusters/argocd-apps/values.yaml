@@ -1,0 +1,22 @@
+project: default
+
+global:
+  clusterConfigPath: infra/clusters/cluster-configs
+
+source:
+  repoURL: https://github.com/indresh-28/test-tekton.git
+  targetRevision: main
+  
+destination:
+  server: https://kubernetes.default.svc
+  namespace: crossplane
+
+syncPolicy:
+  CreateNamespace: true
+  automated:
+    prune: true
+    selfHeal: true
+
+compositions:
+  - name: aws-compositions
+    path: infra/clusters/compositions/aws
