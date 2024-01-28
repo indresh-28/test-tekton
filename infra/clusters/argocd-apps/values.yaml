@@ -1,22 +1,63 @@
-project: default
-
+clusters:
+- defaultApps:
+  - chart: traefik
+    name: traefik
+    namespace: traefik
+    repoURL: https://kube-tarian.github.io/helmrepo-supporting-tools
+    targetRevision: 1.0.2
+    valuesPath: infra/clusters/app-configs/dev-eks/traefik-values.yaml
+  - chart: falco
+    name: falco
+    namespace: falco
+    repoURL: https://kube-tarian.github.io/helmrepo-supporting-tools
+    targetRevision: 0.0.1
+    valuesPath: infra/clusters/app-configs/dev-eks/falco-values.yaml
+  - chart: kyverno
+    name: kyverno
+    namespace: kyverno
+    repoURL: https://kube-tarian.github.io/helmrepo-supporting-tools
+    targetRevision: 1.0.2
+    valuesPath: infra/clusters/app-configs/dev-eks/kyverno-values.yaml
+  - chart: kube-prometheus-stack
+    name: prometheus
+    namespace: observability
+    repoURL: https://kube-tarian.github.io/helmrepo-supporting-tools
+    targetRevision: 1.0.7
+    valuesPath: infra/clusters/app-configs/dev-eks/prometheus-values.yaml
+  - chart: promtail
+    name: promtail
+    namespace: observability
+    repoURL: https://kube-tarian.github.io/helmrepo-supporting-tools
+    targetRevision: 1.0.0
+    valuesPath: infra/clusters/app-configs/dev-eks/promtail-values.yaml
+  - chart: agent
+    name: kubviz-agent
+    namespace: observability
+    repoURL: https://intelops.github.io/kubviz/
+    targetRevision: 1.1.10
+    valuesPath: infra/clusters/app-configs/dev-eks/kubviz-agent-values.yaml
+  - chart: external-secrets
+    name: external-secrets
+    namespace: external-secrets
+    repoURL: https://kube-tarian.github.io/helmrepo-supporting-tools
+    targetRevision: 1.0.0
+    valuesPath: infra/clusters/app-configs/dev-eks/external-secrets-values.yaml
+  name: dev-eks
+  server: https://134044FD640D1ABAF99FC80A924019EE.gr7.us-east-1.eks.amazonaws.com
+compositions:
+- name: aws-compositions
+  path: infra/clusters/compositions/aws
+destination:
+  namespace: crossplane
+  server: https://kubernetes.default.svc
 global:
   clusterConfigPath: infra/clusters/cluster-configs
-
+project: default
 source:
   repoURL: https://github.com/indresh-28/test-tekton.git
   targetRevision: main
-  
-destination:
-  server: https://kubernetes.default.svc
-  namespace: crossplane
-
 syncPolicy:
   CreateNamespace: true
   automated:
     prune: true
     selfHeal: true
-
-compositions:
-  - name: aws-compositions
-    path: infra/clusters/compositions/aws
