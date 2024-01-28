@@ -1,9 +1,0 @@
-ingressDomainName: azureagent.optimizor.app
-namespace: tekton-pipelines
-pipelineName: test-ss-pipeline
-secretName:
-- name: gitcred-test-ss-pipeline
-- name: docker-credentials-test-ss-pipeline
-- name: github-webhook-secret-test-ss-pipeline
-- name: argocd-test-ss-pipeline
-- name: extraconfig-test-ss-pipeline
