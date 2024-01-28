@@ -1,0 +1,9 @@
+ingressDomainName: azureagent.optimizor.app
+namespace: tekton-pipelines
+pipelineName: demo-pipeline
+secretName:
+- name: gitcred-demo-pipeline
+- name: docker-credentials-demo-pipeline
+- name: github-webhook-secret-demo-pipeline
+- name: argocd-demo-pipeline
+- name: extraconfig-demo-pipeline
