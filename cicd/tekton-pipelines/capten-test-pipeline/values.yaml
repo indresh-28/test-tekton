@@ -1,0 +1,9 @@
+ingressDomainName: azureagent.optimizor.app
+namespace: tekton-pipelines
+pipelineName: capten-test-pipeline
+secretName:
+- name: gitcred-capten-test-pipeline
+- name: docker-credentials-capten-test-pipeline
+- name: github-webhook-secret-capten-test-pipeline
+- name: argocd-capten-test-pipeline
+- name: extraconfig-capten-test-pipeline
